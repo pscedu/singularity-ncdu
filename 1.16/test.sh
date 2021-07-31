@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Listing files"
+tree .
+
+echo "Testing bat"
+singularity exec singularity-ncdu-1.6.sif ncdu --help
+
+singularity exec singularity-ncdu-1.6.sif ncdu .
