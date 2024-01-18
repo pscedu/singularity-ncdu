@@ -12,9 +12,12 @@ From: debian:latest
 %post
     apt update
     apt install -y wget
-    wget -nc https://dev.yorhel.nl/download/ncdu-2.2.1-linux-x86_64.tar.gz
-    tar -xvf ncdu-2.2.1-linux-x86_64.tar.gz
-    rm -f ncdu-2.2.1-linux-x86_64.tar.gz
+    wget -nc https://dev.yorhel.nl/download/ncdu-2.2-linux-x86_64.tar.gz
+    tar -xvf ncdu-2.2-linux-x86_64.tar.gz
+    rm -f ncdu-2.2-linux-x86_64.tar.gz
     mv ncdu /usr/local/bin
     apt remove -y wget
     apt -y autoremove
+
+%runscript
+    ncdu "$@"
